@@ -1,0 +1,33 @@
+service: green-blue-and-kind-email
+
+custom:
+  stage: ${opt:stage, self:provider.stage}
+  email:
+    dev: hannahstahl14@gmail.com
+    prod: shana@gbkproducts.com
+  domain:
+    dev: http://localhost:3000
+    prod: https://www.greenblueandkind.com
+
+provider:
+  name: aws
+  runtime: nodejs10.x
+  stage: dev
+  region: us-east-1
+  environment:
+    email: ${self:custom.email.${self:custom.stage}}
+    domain: ${self:custom.domain.${self:custom.stage}}
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - "ses:SendEmail"
+      Resource: "*"
+
+functions:
+  send:
+    handler: handler.send
+    events:
+      - http:
+          path: email/send
+          method: post
+          cors: true
