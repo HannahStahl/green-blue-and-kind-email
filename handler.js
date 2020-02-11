@@ -45,7 +45,7 @@ function generateEmailParams (body) {
       },
       Subject: {
         Charset: 'UTF-8',
-        Data: 'New message from greenblueandkind.com'
+        Data: 'New order request from greenblueandkind.com'
       }
     }
   }
