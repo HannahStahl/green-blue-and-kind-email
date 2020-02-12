@@ -48,7 +48,7 @@ function generateEmailParams (body) {
     subject = 'New order request from greenblueandkind.com';
     html += `
       <h2><b>${name}</b> has submitted a request for the following items:</h2>
-      <table><thead><th><td>Product</td><td>Size</td><td>Color</td><td>Quantity</td><td>Price</td></th></thead><tbody>
+      <table><thead><tr><th>Product</th><th>Size</th><th>Color</th><th>Quantity</th><th>Price</th></tr></thead><tbody>
     `;
     cart.items.forEach((item) => {
       html += `<tr><td>${item.name}</td><td>${item.size}</td><td>${item.color}</td><td>${item.quantity}</td><td>$${item.price}</td></tr>`;
