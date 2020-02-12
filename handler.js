@@ -47,7 +47,7 @@ function generateEmailParams (body) {
       }
     </style></head><body>
   `;
-  if (cart.items) {
+  if (cart.items.length > 0) {
     subject = 'New order request from greenblueandkind.com';
     html += `
       <h2><b>${name}</b> has submitted a request for the following items:</h2>
