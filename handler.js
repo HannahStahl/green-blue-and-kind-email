@@ -38,9 +38,12 @@ function generateEmailParams (body) {
       p {
         font-size: 16px;
       }
-      td {
+      td, th {
         padding: 10px;
         border: solid 1px gray;
+      }
+      th {
+        text-align: left;
       }
     </style></head><body>
   `;
