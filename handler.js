@@ -29,12 +29,15 @@ function generateError (code, err) {
 
 function generateEmailParams (body) {
   const { email, name, cart, message } = JSON.parse(body)
-  if (!(email && name && cart && message)) {
-    throw new Error('Missing parameters! Make sure to add parameters \'email\', \'name\', \'cart\', and \'message\'.')
+  if (!(email && name && cart)) {
+    throw new Error('Missing parameters! Make sure to add parameters \'email\', \'name\', and \'cart\'.')
   }
   let subject = 'New message from greenblueandkind.com';
   let html = `
     <html><head><style>
+      h2 {
+        font-weight: normal;
+      }
       p, td, th {
         font-size: 16px;
       }
