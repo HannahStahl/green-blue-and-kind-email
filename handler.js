@@ -35,7 +35,7 @@ function generateEmailParams (body) {
   let subject = 'New message from greenblueandkind.com';
   let html = `
     <html><head><style>
-      p {
+      p, td, th {
         font-size: 16px;
       }
       td, th {
@@ -58,7 +58,7 @@ function generateEmailParams (body) {
     });
     html += `</tbody></table><p><b>Estimated Total:</b> $${cart.total}</p>`;
     if (message.length > 0) {
-      html += `<h3>Additional notes from ${name}:</h3><p>"${message}"</p>`;
+      html += `<h2>Additional notes from ${name}:</h2><p>"${message}"</p>`;
     }
     html += `<p><i>You can respond to this request by replying directly to this email.</i></p>`;
   } else {
