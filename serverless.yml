@@ -4,7 +4,7 @@ custom:
   stage: ${opt:stage, self:provider.stage}
   email:
     dev: hannahstahl14@gmail.com
-    prod: hannahstahl14@gmail.com
+    prod: shana@gbkproducts.com
   domain:
     dev: http://localhost:3000
     prod: https://www.greenblueandkind.com
